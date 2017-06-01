@@ -2,6 +2,7 @@ var Model = require('./../models/model');
 var passport = require('passport');
 require('./../../config/passport')(passport);
 
+
 var	homeController = { 
 	getLogin: (req, res) => {
 	    res.render("login");
@@ -30,13 +31,17 @@ var	homeController = {
 			username: username,
 			password: password
 		})
-		.then(function() {
-    		res.redirect('/home')
+		.then( (user) => {
+			req.login(user, (err) => {
+		        if(err) return next(err);
+		        res.redirect('/home');
+	    	});
   		})
   		.catch(function(error) {
 	    	res.redirect('/login')
   		})
     },
+
 }
 
 module.exports = homeController;

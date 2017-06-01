@@ -1,3 +1,4 @@
-var User = require('./user');
-
-module.exports.User = User;
+module.exports = {
+	User: require('./user'),
+	UserFB: require('./userFB'),
+}

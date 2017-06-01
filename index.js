@@ -22,17 +22,21 @@ app.listen(3000);
 
 
 
-var homeController = require('./app/controllers/homeController');
+var Controller = require('./app/controllers/Controller');
 
 
 
-app.get("/login", homeController.getLogin);
+app.get("/login", Controller.Home.getLogin);
 
-app.post('/login', homeController.postLogin);
+app.post('/login', Controller.Home.postLogin);
 	
-app.get("/home", homeController.getHome);
+app.get("/home", Controller.Home.getHome);
 
-app.post("/register", homeController.postRegister);
+app.post("/register", Controller.Home.postRegister);
+
+app.get("/login/facebook", Controller.FB.getLoginFB);
+
+app.get("/login/facebook/cb", Controller.FB.callbackLoginFB);
 // app.post('/login', passport.authenticate('local', function(err, user, info) {  
 // 	console.log(err); 
 // 	console.log(user); 
