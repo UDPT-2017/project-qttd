@@ -1,10 +1,10 @@
-# Project - *Name of your app*
+﻿# Project - *Name of your app*
 
 **Name of your app** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
 
 Thành viên:
 * [x] 1312636 - Nguyễn Hoàng Quốc Trung - nhqtrung95 - Tỉ lệ đóng góp cho đề tài
-* [ ] **MSSV2** - Tên sinh viên 2 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
+* [x] 1312088 - Trần Đình Duy - tranduy95 - duytrandinh95@gmail.com - Tỉ lệ đóng góp cho đề tài
 * [ ] **MSSV3** - Tên sinh viên 3 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
 * [ ] **MSSV4** - Tên sinh viên 4 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
 
