@@ -5,7 +5,9 @@ require('./../../config/passport')(passport);
 
 var	homeController = { 
 	getLogin: (req, res) => {
-	    res.render("login");
+		let err = req.flash("error");
+
+	    res.render("login",{err: err});
   	},
   	getHome: (req, res) => {
   		if (!req.isAuthenticated()) {
@@ -15,19 +17,22 @@ var	homeController = {
 		return res.render("index",{user : user});
 	},
 	postLogin: passport.authenticate('local', { successRedirect: '/home',
-                                   				failureRedirect: '/login' 
+                                   				failureRedirect: '/login',
+                                   				failureFlash : true 
     }),
     postRegister: (req, res) => {
     	let username = req.body.username;
     	let password = req.body.password;
     	let Repassword = req.body.Repassword
 		if (!username || !password || !Repassword) {
+			req.flash('error', 'Vui lòng điền đầy đủ thông tin')
 		    res.redirect('/login')
 		}
 		if (password !== Repassword) {
+			req.flash('error', 'Password và Password nhập lại không giống nhau')
 			res.redirect('/login')
 		}
-		Model.User.create({
+		Model.User.local.create({
 			username: username,
 			password: password
 		})
@@ -37,11 +42,17 @@ var	homeController = {
 		        res.redirect('/home');
 	    	});
   		})
-  		.catch(function(error) {
+  		.catch( error => {
+  			req.flash('error', 'User đã tồn tại')
 	    	res.redirect('/login')
   		})
     },
+	callbackLoginFB: passport.authenticate('facebook', { successRedirect: '/home',
+                                   					 failureRedirect: '/login' 
 
+    }),
+    getLoginFB : passport.authenticate('facebook',{scope: ['email']}),
+    
 }
 
 module.exports = homeController;
