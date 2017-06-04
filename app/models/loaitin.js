@@ -9,6 +9,6 @@ const LoaiTin = db.define('LoaiTin', {
 
 LoaiTin.belongsTo(TheLoai);
 
-// LoaiTin.sync();
+LoaiTin.sync();
 
 module.exports = LoaiTin;

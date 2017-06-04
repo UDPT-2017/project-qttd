@@ -12,6 +12,6 @@ const TinTuc = db.define('TinTuc', {
 
 TinTuc.belongsTo(LoaiTin);
 
-// TinTuc.sync();
+TinTuc.sync();
 
 module.exports = TinTuc;

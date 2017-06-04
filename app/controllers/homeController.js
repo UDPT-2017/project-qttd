@@ -10,11 +10,16 @@ var	homeController = {
 	    res.render("login",{err: err});
   	},
   	getHome: (req, res) => {
-  		if (!req.isAuthenticated()) {
-  			return res.redirect('/login');
-  		}
-  		user = req.user;
-		return res.render("index",{user : user});
+  		// if (!req.isAuthenticated()) {
+  		// 	return res.redirect('/login');
+  		// }
+  		// user = req.user;
+
+  		Model.TheLoai.findAll()
+  		.then( (arrTheLoai) =>  {
+  			console.log(arrTheLoai);
+  			res.render("homepage",{arrTheLoai : arrTheLoai})});
+
 	},
 	postLogin: passport.authenticate('local', { successRedirect: '/home',
                                    				failureRedirect: '/login',

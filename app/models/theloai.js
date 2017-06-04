@@ -8,5 +8,16 @@ const TheLoai = db.define('TheLoai', {
 
 })
 // TheLoai.sync();
-
+// TheLoai.create({
+// 	name: 'Trong Nuoc',
+// 	description: 'Trong Nuoc'
+// });
+// TheLoai.create({
+// 	name: 'Ngoai Nuoc',
+// 	description: 'Ngoai Nuoc'
+// });
+// TheLoai.create({
+// 	name: 'Nuoc Ngoai',
+// 	description: 'Nuoc Ngoai'
+// });
 module.exports = TheLoai;
