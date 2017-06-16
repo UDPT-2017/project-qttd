@@ -14,7 +14,14 @@ var	homeController = {
   			return res.redirect('/login');
   		}
   		user = req.user;
-		return res.render("index",{user : user});
+  		Model.TheLoai.findAll({
+  			include: [{
+  				model: Model.LoaiTin,
+  				as: 'LoaiTin'
+  			}]
+  		})
+  		.then( arrTheLoai => res.render("index", {TheLoais: arrTheLoai}))
+
 	},
 	postLogin: passport.authenticate('local', { successRedirect: '/home',
                                    				failureRedirect: '/login',

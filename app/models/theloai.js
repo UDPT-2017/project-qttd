@@ -1,12 +1,13 @@
-const Sequelize = require('sequelize');
-var db = require('./../../config/db');
+'use strict'
 
-
-const TheLoai = db.define('TheLoai', {
-	name : Sequelize.STRING,
-	description: Sequelize.STRING,
-
-})
-// TheLoai.sync();
-
-module.exports = TheLoai;
+module.exports = (db, Sequelize) => {
+	const TheLoai = db.define('TheLoai', {
+		name : {
+			type: Sequelize.STRING,
+			allowNull: false,
+			unique: true
+		},
+		description: Sequelize.STRING,
+	})
+	return TheLoai;
+}

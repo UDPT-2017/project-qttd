@@ -26,16 +26,16 @@ Phần mô tả đặt vào đây
 
 ## Lập trình server
 ### MVC
-* [ ] MVC (MSSV1)
-* [ ] Config (MSSV1)
+* [x] MVC (1312636)
+* [x] Config (1312636)
 * [ ] REST routing (MSSV1)
 * [ ] Layout & partial (MSSV1)
 
 ### Lập trình dữ liệu
-* [ ] Thêm (MSSV1)
-* [ ] Xóa (MSSV1)
-* [ ] Sửa (MSSV1)
-* [ ] Tìm kiếm (MSSV1)
+* [x] Thêm (1312636)
+* [x] Xóa (1312636)
+* [x] Sửa (1312636)
+* [x] Tìm kiếm (1312636)
 
 ### Xử lý lỗi
 * [ ] Xử lý lỗi trong cùng trang web (MSSV1)
@@ -46,7 +46,7 @@ Phần mô tả đặt vào đây
 
 ### Tương tác API khác
 Liệt kê các API nhóm đã sử dụng được ở đây
-* [ ] Facebook API: mô tả (MSSV1)
+* [x] Facebook API: Đăng nhập (1312636)
 * [ ] Google API: mô tả (MSSV1)
 * [ ] ...
 
@@ -57,7 +57,7 @@ Liệt kê các API nhóm đã sử dụng được ở đây
 * [ ] AJAX (MSSV1)
 
 ## Bảo mật
-* [ ] Chứng thực (MSSV1)
+* [x] Chứng thực (1312636)
 * [ ] Phân quyền sử dụng một số trang web với nhiều vai trò khác nhau (MSSV1)
    * [ ] Không cho phép thao tác vào trang web khi không có quyền (MSSV1)
    * [ ] Thể hiện các chức năng khác nhau trên cùng giao diện khi người dùng có quyền khác nhau (MSSV1)
