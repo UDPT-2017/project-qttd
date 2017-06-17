@@ -3,37 +3,6 @@ var FBStrategy = require('passport-facebook').Strategy;
 var Model = require('./../app/models/model');
 
 module.exports = (passport) => {
-    passport.serializeUser(function(user, done) {
-        if(!user.password){
-            var data = {
-                "id": user.id ,
-                "class": "facebook" 
-            }
-            data = JSON.stringify(data);
-            return done(null, data)
-        }
-        else{
-            var data = {
-                "id": user.id ,
-                "class": "local" 
-            }
-            data = JSON.stringify(data);
-            return done(null, data)
-        }
-    });
-
-    passport.deserializeUser(function(data, done) {
-        data = JSON.parse(data)
-        if (data.class == "facebook") {
-            Model.User.facebook.findById(data.id)
-            .then( user => done(null, user) )
-        }
-        else{
-            Model.User.local.findById(data.id)
-            .then( user => done(null, user) )
-        }
-               
-    });
     passport.use(new LocalStrategy(
         function(username, password, done) {
             Model.User.local.findOne({

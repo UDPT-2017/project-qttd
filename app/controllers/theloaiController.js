@@ -1,4 +1,6 @@
 var Model = require('./../models/model');
+var passport = require('passport');
+require('./../../config/passport')(passport);
 
 var TheLoaiController = {
 	getDSTheLoai: (req, res) => {

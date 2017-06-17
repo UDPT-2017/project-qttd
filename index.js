@@ -6,7 +6,9 @@ app.use( bodyParser.urlencoded({ extended: true }) );
 var passport = require('passport');
 var users = require('./app/models/user');
 var flash    = require('connect-flash');
+var isAdminMiddleware = require('./app/middlewares/isAdminMiddleware');
 
+// app.use('/admin', isAdminMiddleware);
 app.use(flash());
 app.use(express.static('public'));
 app.set("view engine", "ejs");
