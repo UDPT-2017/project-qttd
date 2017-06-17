@@ -5,7 +5,7 @@
 Thành viên:
 * [x] 1312636 - Nguyễn Hoàng Quốc Trung - nhqtrung95 - Tỉ lệ đóng góp cho đề tài
 * [x] 1312088 - Trần Đình Duy - tranduy95 - duytrandinh95@gmail.com - Tỉ lệ đóng góp cho đề tài
-* [x ] **1312064** - Phan Nguyên Mạnh Cường - 1312064 - phancuong12a5@gmail.com - Tỉ lệ đóng góp cho đề tài
+* [ ] **MSSV3** - Tên sinh viên 3 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
 * [ ] **MSSV4** - Tên sinh viên 4 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
 
 URL: **URL hosting của đề tài**
@@ -47,7 +47,7 @@ Phần mô tả đặt vào đây
 ### Tương tác API khác
 Liệt kê các API nhóm đã sử dụng được ở đây
 * [x] Facebook API: Đăng nhập (1312636)
-* [ ] Google API: mô tả (MSSV1)
+* [x ] Google API: Đăng nhập (1312064)
 * [ ] ...
 
 ## Lập trình client

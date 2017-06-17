@@ -13,7 +13,12 @@ module.exports = (app) => {
 
 	app.get("/login/facebook/cb", Controller.Home.callbackLoginFB);
 
+	app.get("/login/google", Controller.Home.getloginGG);
 
+	app.get("/login/google/cb", Controller.Home.callbackloginGG);
+
+// d m thang sida
+// nãy mày viết hoa chữ L
 	//Thể Loại Controller
 	app.get("/admin/theloai/danhsach", Controller.TheLoai.getDSTheLoai);
 
