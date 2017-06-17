@@ -1,4 +1,6 @@
 module.exports = {
 	Home: require("./homeController"),
-	FB: require("./apiFBController"),
+	TheLoai: require("./theloaiController"),
+	LoaiTin: require("./loaitinController"),
+	TinTuc: require("./tintucController")
 }
