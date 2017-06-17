@@ -10,17 +10,6 @@ var	homeController = {
 	    res.render("login",{err: err});
   	},
   	getHome: (req, res) => {
-<<<<<<< HEAD
-  		// if (!req.isAuthenticated()) {
-  		// 	return res.redirect('/login');
-  		// }
-  		// user = req.user;
-
-  		Model.TheLoai.findAll()
-  		.then( (arrTheLoai) =>  {
-  			console.log(arrTheLoai);
-  			res.render("homepage",{arrTheLoai : arrTheLoai})});
-=======
   		if (!req.isAuthenticated()) {
   			return res.redirect('/login');
   		}
@@ -32,7 +21,6 @@ var	homeController = {
   			}]
   		})
   		.then( arrTheLoai => res.render("index", {TheLoais: arrTheLoai}))
->>>>>>> 20762b70ecbfaf182b822cb73931e0d00f2e8f48
 
 	},
 	postLogin: passport.authenticate('local', { successRedirect: '/home',
@@ -66,12 +54,15 @@ var	homeController = {
 	    	res.redirect('/login')
   		})
     },
-	callbackLoginFB: passport.authenticate('facebook', { successRedirect: '/home',
+	   callbackLoginFB: passport.authenticate('facebook', { successRedirect: '/home',
                                    					 failureRedirect: '/login' 
 
     }),
     getLoginFB : passport.authenticate('facebook',{scope: ['email']}),
-    
+    getloginGG :passport.authenticate('google',{scope:['email']}),
+    callbackloginGG: passport.authenticate('google', { successRedirect: '/home',
+                                             failureRedirect: '/login'
+   }),
 }
 
 module.exports = homeController;

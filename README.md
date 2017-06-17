@@ -47,7 +47,7 @@ Phần mô tả đặt vào đây
 ### Tương tác API khác
 Liệt kê các API nhóm đã sử dụng được ở đây
 * [x] Facebook API: Đăng nhập (1312636)
-* [ ] Google API: mô tả (MSSV1)
+* [x ] Google API: Đăng nhập (1312064)
 * [ ] ...
 
 ## Lập trình client
