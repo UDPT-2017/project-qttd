@@ -10,17 +10,6 @@ var	homeController = {
 	    res.render("login",{err: err});
   	},
   	getHome: (req, res) => {
-<<<<<<< HEAD
-  		// if (!req.isAuthenticated()) {
-  		// 	return res.redirect('/login');
-  		// }
-  		// user = req.user;
-
-  		Model.TheLoai.findAll()
-  		.then( (arrTheLoai) =>  {
-  			console.log(arrTheLoai);
-  			res.render("homepage",{arrTheLoai : arrTheLoai})});
-=======
   		if (!req.isAuthenticated()) {
   			return res.redirect('/login');
   		}
@@ -29,10 +18,14 @@ var	homeController = {
   			include: [{
   				model: Model.LoaiTin,
   				as: 'LoaiTin'
-  			}]
+  			},{
+          include: [{
+            model: Model.LoaiTin,
+            as: 'LoaiTin'
+          }]
+        }]
   		})
   		.then( arrTheLoai => res.render("index", {TheLoais: arrTheLoai}))
->>>>>>> 20762b70ecbfaf182b822cb73931e0d00f2e8f48
 
 	},
 	postLogin: passport.authenticate('local', { successRedirect: '/home',

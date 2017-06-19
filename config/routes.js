@@ -13,6 +13,17 @@ module.exports = (app) => {
 
 	app.get("/login/facebook/cb", Controller.Home.callbackLoginFB);
 
+	// Xử lý của user 
+	//Thêm tin tức
+	app.get("/user", Controller.User.getThemTinTuc);
+
+	app.post("/user", Controller.User.postThemTinTuc);
+	//Sửa tin tức
+	app.get("/user/:id", Controller.User.getSuaTinTuc);
+
+	app.post("/user/:id", Controller.User.postSuaTinTuc);
+
+
 
 	//Thể Loại Controller
 	app.get("/admin/theloai/danhsach", Controller.TheLoai.getDSTheLoai);
