@@ -119,20 +119,6 @@
                 <textarea class="span11" name="description"><%= LoaiTin.description %></textarea>
               </div>
             </div>
-            <div class="control-group">
-              <p class="control-label" style="font-size: 20px">Thể loại :</p>
-              <div class="controls">
-                <select multiple name="theloai">
-                  <% TheLoais.forEach(TheLoai => { %>
-                    <option value="<%= TheLoai.id %>" 
-                    <% if(TheLoai.id == LoaiTin.TheLoai.id){ %>
-                      selected
-                    <% } %>
-                    ><%= TheLoai.name %></option>
-                  <% }) %>
-                </select>
-              </div>
-            </div>
             <div class="form-actions">
               <input type="submit" value="Thêm" style="margin-left: 900px " class="btn btn-success" />
             </div>

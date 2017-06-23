@@ -106,7 +106,7 @@
           <h5>BÀI VIẾT MỚI</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="../../admin/tintuc/them" method="post" class="form-horizontal">
+          <form action="../../admin/tintuc/them" method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="control-group">
               <p class="control-label" style="font-size: 20px">Tiêu đề :</p>
               <div class="controls">
@@ -126,9 +126,15 @@
               </div>
             </div>
             <div class="control-group">
-              <p class="control-label" style="font-size: 20px">Thể loại :</p>
+              <p class="control-label" style="font-size: 20px">Giá :</p>
               <div class="controls">
-                <select multiple name="loaitin">
+                <input type="text" class="span11" name="price" placeholder="" />
+              </div>
+            </div>
+            <div class="control-group">
+              <p class="control-label" style="font-size: 20px">Loại Tin :</p>
+              <div class="controls">
+                <select multiple name="loaitin" id="LoaiTin">
                 <% LoaiTins.forEach(LoaiTin => { %>
                   <option value="<%= LoaiTin.id %>"><%= LoaiTin.name %></option>
                 <% }) %>  
@@ -161,7 +167,6 @@
     </div>
     </div>
 
-
 <!--Footer-part-->
 <div class="row-fluid">
   <div id="footer" class="span12"> 2016 &copy; </a> </div>
@@ -182,7 +187,7 @@
 <script src="../../admin_asset/js/jquery.peity.min.js"></script> 
 <script src="../../admin_asset/js/bootstrap-wysihtml5.js"></script> 
 <script>
-	$('.textarea_editor').wysihtml5();
+	 $('.textarea_editor').wysihtml5();
 </script>
 </body>
 </html>

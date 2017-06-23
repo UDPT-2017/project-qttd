@@ -8,11 +8,15 @@ module.exports = (db, Sequelize) => {
 			unique: true
 		},
 		summmary: Sequelize.STRING,
+		price: {
+			type: Sequelize.INTEGER,
+			allowNull: false,
+		},
 		image: Sequelize.STRING,
 		substance: {
 			type: Sequelize.STRING,
 			allowNull: false
-		},
+		}
 	});
 	return TinTuc;
 }
