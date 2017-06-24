@@ -1,5 +1,6 @@
 var Model = require('./../models/model');
 
+
 var TinTucController = {
 	getDSTinTuc: (req, res) => {
 		Model.TinTuc.findAll({
@@ -17,15 +18,20 @@ var TinTucController = {
 		.then(arrLoaiTin => res.render("admin/tintuc/them",{err: err, success: success, LoaiTins: arrLoaiTin}))
 	},
 	postThemTinTuc: (req, res) => {
+		console.log(req.file);
 		let name = req.body.name;
 		let summmary = req.body.summmary;
 		let substance = req.body.substance;
-		let idLoaiTin = req.body.loaitin
+		let idLoaiTin = req.body.loaitin;
+		let price = parseInt(req.body.price);
+		let image = req.file.path.slice(7).replace(/\\/g, "/");
 		const tintuc = Model.TinTuc.build({
 			name: name,
 			summmary: summmary,
 			substance: substance,
-			LoaiTinId: idLoaiTin
+			LoaiTinId: idLoaiTin,
+			image: image,
+			price: price,
 		});
 		tintuc.save()
 		.then(() => {

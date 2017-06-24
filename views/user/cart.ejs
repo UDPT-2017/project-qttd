@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giỏ hàng</title>
+</head>
+<body>
+
+	<h1 id="totalQty">$<%= totalPrice %></h1> <br>
+	<% TinTucs.forEach(tintuc => { %>
+		<div id="item<%= tintuc.item.id %>">
+			<%= tintuc.item.name %>  
+			<button onclick="addItem(<%= tintuc.item.id %>)" >Add</button>
+			<span id="qty<%=tintuc.item.id%>"><%= tintuc.qty %></span>  
+			<button onclick="reduceItem(<%= tintuc.item.id %>)" >Reduce</button>  
+			<span id="price<%=tintuc.item.id%>"><%= tintuc.price %></span> 
+			<button onclick="removeItem(<%= tintuc.item.id %>)" >Remove	</button><br>
+		</div>
+	<% }) %>
+
+	<script>
+		function addItem(id){
+			$.get("./add/"+id, function(data, status){
+				$("#qty"+ id).html(data.items[id].qty);
+				$("#price"+ id).html(data.items[id].price);
+				$("#totalQty").html("$"+data.totalPrice)
+			});
+		}
+		function reduceItem(id){
+			$.get("./reduce/"+id, function(data, status){
+				if (data.items[id] == undefined) {
+					$("#item"+id).remove();
+				}
+				else{
+					$("#qty"+ id).html(data.items[id].qty);
+					$("#price"+ id).html(data.items[id].price);
+					$("#totalQty").html("$"+data.totalPrice);					
+				}
+			});
+		}
+		function removeItem(id){
+			$.get("./remove/"+id, function(data, status){
+				$("#item"+id).remove();
+				$("#totalQty").html("$"+data.totalPrice)
+			});
+		}
+    </script>
+    <script type="text/javascript" src="page_asset/js/jquery-2.1.4.min.js"></script>
+</body>
+</html>
