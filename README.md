@@ -51,7 +51,7 @@ Liệt kê các API nhóm đã sử dụng được ở đây
 * [ ] ...
 
 ## Lập trình client
-* [ ] Kiểm tra dữ liệu (MSSV1)
+* [x] Kiểm tra dữ liệu (kiểm tra dữ liệu đăng kí tài khoản ) (1312064)
 * [ ] Animation (MSSV1)
 * [ ] Thao tác DOM (MSSV1)
 * [ ] AJAX (MSSV1)
