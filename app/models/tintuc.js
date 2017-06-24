@@ -12,7 +12,7 @@ module.exports = (db, Sequelize) => {
 		substance: {
 			type: Sequelize.STRING,
 			allowNull: false
-		},
+		}
 	});
 	return TinTuc;
 }

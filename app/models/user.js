@@ -21,8 +21,8 @@ const User = {
 
 
 
-// // User.facebook.sync();
-// // User.local.sync();
+// User.facebook.sync();
+// User.local.sync();
 // // User.create({
 // // 	username: 'nhqtrung',
 // // 	password: 'tyevtcbye'

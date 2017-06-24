@@ -1,11 +1,12 @@
 var Controller = require('./../app/controllers/Controller');
+var upload = require('./upload');
 
 module.exports = (app) => {
 	app.get("/login", Controller.Home.getLogin);
 
 	app.post('/login', Controller.Home.postLogin);
 		
-	app.get("/home", Controller.Home.getHome);
+	app.get("/home", Controller.Home.getHome)
 
 	app.post("/register", Controller.Home.postRegister);
 
@@ -14,6 +15,10 @@ module.exports = (app) => {
 	app.get("/login/facebook/cb", Controller.Home.callbackLoginFB);
 
 	// Xử lý của user 
+	// Danh sách tin tức
+	app.get("/user/danhsach/:id", Controller.User.getDanhSachTinTuc);
+
+
 	//Thêm tin tức
 	app.get("/user", Controller.User.getThemTinTuc);
 
@@ -22,23 +27,12 @@ module.exports = (app) => {
 	app.get("/user/:id", Controller.User.getSuaTinTuc);
 
 	app.post("/user/:id", Controller.User.postSuaTinTuc);
+	//Xóa Tin tức
+	app.get("/user/xoa/:id", Controller.User.getXoaTinTuc);
+	//Tìm kiếm Tin Tức
+	// app.get("/user/timid", Controller.User.getTimTinTuc);
 
-
-
-	//Thể Loại Controller
-	app.get("/admin/theloai/danhsach", Controller.TheLoai.getDSTheLoai);
-
-	app.get("/admin/theloai/them", Controller.TheLoai.getThemTheLoai);
-
-	app.post("/admin/theloai/them", Controller.TheLoai.postThemTheLoai);
-
-	app.get("/admin/theloai/:id", Controller.TheLoai.getSuaTheLoai);
-
-	app.post("/admin/theloai/:id", Controller.TheLoai.postSuaTheLoai);
-
-	app.get("/admin/theloai/xoa/:id", Controller.TheLoai.getXoaTheLoai);
-
-
+	
 	//Loại Tin Controller
 	app.get("/admin/loaitin/danhsach", Controller.LoaiTin.getDSLoaiTin);
 
@@ -58,11 +52,15 @@ module.exports = (app) => {
 
 	app.get("/admin/tintuc/them", Controller.TinTuc.getThemTinTuc);
 
-	app.post("/admin/tintuc/them", Controller.TinTuc.postThemTinTuc);
+	app.post("/admin/tintuc/them", upload.single("image"), Controller.TinTuc.postThemTinTuc);
 
 	app.get("/admin/tintuc/:id", Controller.TinTuc.getSuaTinTuc);
 
 	app.post("/admin/tintuc/:id", Controller.TinTuc.postSuaTinTuc);
 
 	app.get("/admin/tintuc/xoa/:id", Controller.TinTuc.getXoaTinTuc);
+
+	//Giỏ Hàng
+	app.get("/add/:id", Controller.Cart.add);
+	app.get("/cart", Controller.Cart.getCart);
 }

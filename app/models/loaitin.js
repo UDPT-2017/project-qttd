@@ -2,7 +2,7 @@
 
 module.exports = (db, Sequelize) => {
 	const LoaiTin = db.define('LoaiTin', {
-		name : {
+		name :{
 			type: Sequelize.STRING,
 			allowNull: false,
 			unique: true
@@ -11,4 +11,4 @@ module.exports = (db, Sequelize) => {
 	});
 
 	return LoaiTin;
-}	
+}

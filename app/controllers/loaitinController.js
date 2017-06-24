@@ -2,28 +2,20 @@ var Model = require('./../models/model');
 
 var LoaiTinController = {
 	getDSLoaiTin: (req, res) => {
-		Model.LoaiTin.findAll({
-  			include: [{
-  				model: Model.TheLoai,
-  				as: 'TheLoai'
-  			}]
-		})
+		Model.LoaiTin.findAll()
 		.then(arrLoaiTin => res.render("admin/loaitin/danhsach",{LoaiTins: arrLoaiTin}))
 	},
 	getThemLoaiTin: (req, res) => {
 		let err = req.flash("err");
 		let success = req.flash("success");
-		Model.TheLoai.findAll()
-		.then(arrTheLoai => res.render("admin/loaitin/them",{err: err, success: success, TheLoais: arrTheLoai}))
+		res.render("admin/loaitin/them",{err: err, success: success})
 	},
 	postThemLoaiTin: (req, res) => {
 		let name = req.body.name;
 		let description = req.body.description;
-		let idTheLoai = req.body.theloai;
 		const loaitin = Model.LoaiTin.build({
 			name: name,
 			description: description,
-			TheLoaiId: idTheLoai
 		});
 		loaitin.save()
 		.then(() => {
@@ -39,27 +31,17 @@ var LoaiTinController = {
 		let id = req.params.id;
 		let err = req.flash("err");
 		let success = req.flash("success");
-		Model.LoaiTin.findById(id, {
-  			include: [{
-  				model: Model.TheLoai,
-  				as: 'TheLoai'
-  			}]
-		})
-		.then(LoaiTin => {
-			Model.TheLoai.findAll()
-			.then((TheLoais) => res.render("admin/loaitin/sua",{err: err , success: success, LoaiTin: LoaiTin, TheLoais: TheLoais}))
-		})
+		Model.LoaiTin.findById(id)
+		.then(LoaiTin => res.render("admin/loaitin/sua",{err: err , success: success, LoaiTin: LoaiTin}))
 	},
 	postSuaLoaiTin: (req, res) => {
 		let id = req.params.id;
 		let name = req.body.name;
 		let description = req.body.description;
-		let idTheLoai = req.body.theloai;
 
 		Model.LoaiTin.update({
 			name: name,
 			description: description,
-			TheLoaiId: idTheLoai
 		},{
 			where: {
 				id: id

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Thêm Danh Mục</title>
+<title>Quản lí tin tức</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="../../admin_asset/css/bootstrap.min.css" />
@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="../../admin_asset/css/select2.css" />
 <link rel="stylesheet" href="../../admin_asset/css/matrix-style.css" />
 <link rel="stylesheet" href="../../admin_asset/css/matrix-media.css" />
-<link rel="stylesheet" href="../../admin_asset/css/bootstrap-wysihtml5.css" />
 <link href="../../admin_asset/font-awesome/css/font-awesome.css" rel="stylesheet" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
@@ -62,10 +61,10 @@
 <div id="sidebar"><a href="../../admin_asset/#" class="visible-phone"><i class="icon icon-home"></i> Trang quản trị</a>
   <ul>
     <li ><a href="../../admin_asset/index.html"><i class="icon icon-home"></i> <span>Trang quản trị</span></a> </li>
-    <li class="submenu "> <a href="../../admin_asset/#"><i class="icon icon-signal"></i> <span>Bài viết</span> <span class="label label-important">20</span></a>
+    <li class="submenu"> <a href="../../admin_asset/#"><i class="icon icon-signal"></i> <span>Bài viết</span> <span class="label label-important">20</span></a>
       <ul>
-        <li ><a href="../../admin_asset/baimoi.html">Thêm bài viết</a></li>
-        <li ><a href="../../admin_asset/qlibaiviet.html">Quản lí bài viết</a></li>
+        <li><a href="../../admin_asset/baimoi.html" >Thêm bài viết</a></li>
+        <li><a href="../../admin_asset/qlibaiviet.html">Quản lí bài viết</a></li>
         
         
       </ul>
@@ -73,10 +72,10 @@
     
     <li> <a href="../../admin_asset/qlibinhluan.html"><i class="icon icon-inbox"></i> <span>Bình luận</span></a> </li>
     <li><a href="../../admin_asset/qlithanhvien.html"><i class="icon icon-th"></i> <span>Thành viên</span></a></li>
-    <li class="submenu active open"><a href="../../admin_asset/#"><i class="icon icon-fullscreen"></i> <span>Danh Mục</span></a>
+    <li class="submenu active open"><a href="../../admin_asset/#"><i class="icon icon-fullscreen"></i> <span>Thể loại</span></a>
       <ul>
-        <li class="active"><a href="../../admin_asset/themtheloai.html">Thêm Danh Mục</a></li>
-        <li><a href="../../admin_asset/qlitheloai.html">Danh sách Danh Mục</a></li>
+        <li><a href="../../admin_asset/themtheloai.html">Thêm thể loại</a></li>
+        <li class="active"><a href="../../admin_asset/qlitheloai.html">Danh sách thể loại</a></li>
         
         
       </ul>
@@ -88,77 +87,68 @@
 </div>
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="../../admin_asset/index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Trang chủ</a> <a href="../../admin_asset/#" class="current">Thêm Danh Mục</a> </div>
-    
+    <div id="breadcrumb"> <a href="../../admin_asset/index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Trang chủ</a> <a href="../../admin_asset/#" class="current">Quản lí thể loại</a> </div>
+    <h1>Danh sách tin tức</h1>
   </div>
-<div class="container-fluid">
-  <hr>
-  <% if(err != "" && err != undefined){ %>
-    <div class="alert alert-danger"><strong>Lỗi! </strong><%= err %></div>
-  <% } %>
-  <% if(success != "" && success != undefined){ %>
-    <div class="alert alert-success"><strong>Thành công! </strong><%= success %></div>
-  <% } %>
-  <div class="row-fluid">
-    <div class="span12">
-      <div class="widget-box">
-        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-          <h5>Danh Mục MỚI</h5>
-        </div>
-        <div class="widget-content nopadding">
-          <form action="../../admin/theloai/<%= TheLoai.id %>" method="post" class="form-horizontal">
-            <div class="control-group">
-              <p class="control-label" style="font-size: 20px">Tiêu đề :</p>
-              <div class="controls">
-                <input type="text" class="span11" name="name" value="<%= TheLoai.name %>" placeholder="Tên Danh Mục" />
-              </div>
-            </div>
-            <div class="control-group">
-              <p class="control-label" style="font-size: 20px">Mô tả :</p>
-              <div class="controls">
-                <textarea class="span11" value="<%= TheLoai.description %>" name="description"></textarea>
-              </div>
-            </div>
-           
-          <div class="form-actions">
-              <input type="submit" value="Thêm" style="margin-left: 900px " class="btn btn-success" />
-            </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        
+        
+        
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon">
+            <input type="checkbox" id="title-checkbox" name="title-checkbox" />
+            </span>
+            <h5>Chọn tất cả</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered data-table table-striped with-check">
+              <thead>
+                <tr>
+                  <th><i class="icon-resize-vertical"></i></th>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Description</th>
+
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+
+                </tr>
+              </thead>
+              <tbody>
+              <% TinTucs.forEach(TinTuc => { %>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td><%= TinTuc.id %></td>
+                  <td><%= TinTuc.name %></td>
+                  <td><%= TinTuc.summmary %></td>
+
+                  <td><a href="../../user/<%= TinTuc.id %>">Sửa</a></td>
+                  <td><a href="../../user/xoa/<%= TinTuc.id %>">Xóa</a></td>
+                </tr>
+              <% }) %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-            </div>
-            
-            
-          </form>
-        </div>
-      </div>
-      
     </div>
-    </div>
-    </div>
-    </div>
-
-
+  </div>
+</div>
 <!--Footer-part-->
 <div class="row-fluid">
-  <div id="footer" class="span12"> 2016 &copy; </a> </div>
+  <div id="footer" class="span12"> 2016 &copy;</a> </div>
 </div>
-<!--end-Footer-part--> 
+<!--end-Footer-part-->
 <script src="../../admin_asset/js/jquery.min.js"></script> 
 <script src="../../admin_asset/js/jquery.ui.custom.js"></script> 
 <script src="../../admin_asset/js/bootstrap.min.js"></script> 
-<script src="../../admin_asset/js/bootstrap-colorpicker.js"></script> 
-<script src="../../admin_asset/js/bootstrap-datepicker.js"></script> 
-<script src="../../admin_asset/js/jquery.toggle.buttons.js"></script> 
-<script src="../../admin_asset/js/masked.js"></script> 
 <script src="../../admin_asset/js/jquery.uniform.js"></script> 
 <script src="../../admin_asset/js/select2.min.js"></script> 
+<script src="../../admin_asset/js/jquery.dataTables.min.js"></script> 
 <script src="../../admin_asset/js/matrix.js"></script> 
-<script src="../../admin_asset/js/matrix.form_common.js"></script> 
-<script src="../../admin_asset/js/wysihtml5-0.3.0.js"></script> 
-<script src="../../admin_asset/js/jquery.peity.min.js"></script> 
-<script src="../../admin_asset/js/bootstrap-wysihtml5.js"></script> 
-<script>
-	$('.textarea_editor').wysihtml5();
-</script>
+<script src="../../admin_asset/js/matrix.tables.js"></script>
 </body>
 </html>

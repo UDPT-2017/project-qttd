@@ -1,4 +1,6 @@
 var Model = require('./../models/model');
+var passport = require('passport');
+require('./../../config/passport')(passport);
 
 var TheLoaiController = {
 	getDSTheLoai: (req, res) => {
@@ -13,7 +15,6 @@ var TheLoaiController = {
 	postThemTheLoai: (req, res) => {
 		let name = req.body.name;
 		let description = req.body.description;
-		// console.log(name + "  " + description);
 		const theloai = Model.TheLoai.build({
 			name: name, 
 			description: description

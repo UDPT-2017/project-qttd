@@ -18,6 +18,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use((req, res, next) => {
+	res.locals.session = req.session;
+	next();
+});
+
 require('./config/routes.js')(app);
 
 app.listen(3000);
