@@ -17,7 +17,7 @@ var homeController = {
         })
         .then(arrTinTuc => {
           Model.LoaiTin.findAll()
-          .then(arrLoaiTin => res.render("user/index",{TinTucs: arrTinTuc, LoaiTins: arrLoaiTin, tittle: "tin tuc"}))
+          .then(arrLoaiTin => res.render("user/index",{TinTucs: arrTinTuc, LoaiTins: arrLoaiTin,}))
         })      
     },
     postLogin: passport.authenticate('local', { successRedirect: '/home',
@@ -56,7 +56,11 @@ var homeController = {
 
     }),
     getLoginFB : passport.authenticate('facebook',{scope: ['email']}),
-    
+    getLoginGG : passport.authenticate('google',{scope:['email']}),
+    callbackLoginGG: passport.authenticate('google', { successRedirect: '/home',
+                                             failureRedirect: '/login' 
+
+    }),
 }
 
 module.exports = homeController;

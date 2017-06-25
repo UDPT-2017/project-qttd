@@ -13,6 +13,11 @@ module.exports = (app) => {
 	app.get("/login/facebook", Controller.Home.getLoginFB);
 
 	app.get("/login/facebook/cb", Controller.Home.callbackLoginFB);
+	
+	app.get("/login/google", Controller.Home.getLoginGG);
+
+	app.get("/login/google/cb", Controller.Home.callbackLoginGG);
+
 
 	// Xử lý của user 
 	//Thêm tin tức
