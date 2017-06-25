@@ -37,7 +37,4 @@ db.TinTuc.hasMany(db.ChiTietDatHang,{as: 'ChiTietDatHang'});
 
 
 
-
-// db.TheLoai.sync();
-
 module.exports = db;

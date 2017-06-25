@@ -107,6 +107,7 @@
         </div>
         <div class="widget-content nopadding">
           <form action="../../admin/loaitin/<%= LoaiTin.id %>" method="post" class="form-horizontal">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="control-group">
               <p class="control-label" style="font-size: 20px">Loại Tin :</p>
               <div class="controls">

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giỏ hàng</title>
+</head>
+<body>
+
+	<h1 id="totalQty">$<%= totalPrice %></h1> <br>
+	<% TinTucs.forEach(tintuc => { %>
+		<div id="item<%= tintuc.item.id %>">
+			<%= tintuc.item.name %>  
+			-
+			<span id="qty<%=tintuc.item.id%>"><%= tintuc.qty %></span>  
+			-
+			<span id="price<%=tintuc.item.id%>"><%= tintuc.price %></span> 
+			<br>
+		</div>
+	<% }) %>
+	<h2>Thông tin đặt hàng</h2>
+	<form action="" method="post">
+					<input type="hidden" name="totalPrice" value="<%= totalPrice %>">
+					<input type="hidden" name="userid" value="<%= user.id %>">
+		Tên:		<input type="text" name="name"><br>
+		Email: 		<input type="text" name="username" value="<%= user.username %>"><br>
+		Địa Chỉ: 	<input type="text" name="address"><br>
+		SĐT:		<input type="text" name="SĐT"><br>
+		Đặt Hàng:	<input type="submit" value="Đặt Hàng">
+	</form>
+	<strong>Chúng tôi sẽ liên hệ lại với bạn để xác nhận thông tin đặt hàng</strong>
+		
+    <script type="text/javascript" src="page_asset/js/jquery-2.1.4.min.js"></script>
+</body>
+</html>

@@ -107,6 +107,7 @@
         </div>
         <div class="widget-content nopadding">
           <form action="../../admin/tintuc/<%= TinTuc.id %>" method="post" class="form-horizontal">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="control-group">
               <p class="control-label" style="font-size: 20px">Tiêu đề :</p>
               <div class="controls">

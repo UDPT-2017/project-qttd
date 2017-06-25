@@ -109,29 +109,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h2>FABULOUS FOOD AT AFFORDABLE PRICES!</h2>
 			<div class="book-form">
 			<p>Reserve a table.</p>
-			   <form action="#" method="post">
-					<div class="col-md-3 form-time-w3layouts">
-							<label><i class="fa fa-clock-o" aria-hidden="true"></i> Time :</label>
-							<input type="time">
-					</div>
-					<div class="col-md-3 form-date-w3-agileits">
-						        <label><i class="fa fa-calendar" aria-hidden="true"></i> Date :</label>
-									<input  id="datepicker1" name="Text" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
-								</div>
-					<div class="col-md-3 form-left-agileits-w3layouts ">
-							<label><i class="fa fa-users" aria-hidden="true"></i> No.of People :</label>
-							<select class="form-control">
-								<option></option>
-								<option>1 Person</option>
-								<option>2 People</option>
-								<option>3 People</option>
-								<option>4 People</option>
-								<option>5 People</option>
-								<option>More</option>
+			   <form action="./findproducts" method="get">
+					<div class="col-md-4 form-left-agileits-w3layouts ">
+							<label><i class="fa fa-users" aria-hidden="true"></i> Loại Sản Phẩm :</label>
+							<select class="form-control" name="loaitin">
+								<option value="0"></option>
+								<% LoaiTins.forEach(loaitin => { %>
+										<option value="<%= loaitin.id %>"><%= loaitin.name %></option>
+								<% }) %>
 							</select>
 					</div>
-					<div class="col-md-3 form-left-agileits-submit">
-						  <input type="submit" value="Book a table">
+					<div class="col-md-4 form-left-agileits-w3layouts ">
+							<label><i class="fa fa-users" aria-hidden="true"></i> Tên Sản Phẩn :</label>
+								<input class="form-control" type="text" name="tintuc">
+					</div>
+					<div class="col-md-4 form-left-agileits-submit">
+						  <input type="submit" value="Find Products">
 					</div>
 				</form>
 			</div>
@@ -235,227 +228,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		}
     </script>
-	<div class="special">
-		<div class="container">
-			<div class="special-heading">
-				<h2 class="tittle-w3"><span>Special</span> Services</h2>
-			</div>
-			<div class="special-grids">
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 w3ls-special-img">
-						<div class="w3ls-special-text effect-1">
-							<h4>Aliquam</h4>
-						</div>
-					</div>
-					<div class="col-md-6 agileits-special-info">
-						<h4>Aliquam</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 w3ls-special-img wthree-img">
-						<div class="w3ls-special-text effect-1">
-							<h4>Nullam</h4>
-						</div>
-					</div>
-					<div class="col-md-6 agileits-special-info">
-						<h4>Nullam</h4>
-						<p>Maecenas ac purus. Lorem ipsum dolor sit amet</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 w3ls-special-img wthree-img1">
-						<div class="w3ls-special-text effect-1">
-							<h4>Maecenas</h4>
-						</div>
-					</div>
-					<div class="col-md-6 agileits-special-info">
-						<h4>Maecenas</h4>
-						<p>Donec nibh enim, sodales laoreet sit amet, tincidunt</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 agileits-special-info">
-						<h4>Aliquam</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-					</div>
-					<div class="col-md-6 w3ls-special-img wthree-img2">
-						<div class="w3ls-special-text effect-1">
-							<h4>Aliquam</h4>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 agileits-special-info">
-						<h4>Nullam</h4>
-						<p>Maecenas ac purus. Lorem ipsum dolor sit amet</p>
-					</div>
-					<div class="col-md-6 w3ls-special-img wthree-img3">
-						<div class="w3ls-special-text effect-1">
-							<h4>Nullam</h4>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 agileits-special-info">
-						<h4>Maecenas</h4>
-						<p>Donec nibh enim, sodales laoreet sit amet, tincidunt</p>
-					</div>
-					<div class="col-md-6 w3ls-special-img wthree-img4">
-						<div class="w3ls-special-text effect-1">
-							<h4>Maecenas</h4>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //special -->
-<!-- special -->
-	<div class="special">
-		<div class="container">
-			<div class="special-heading">
-				<h2 class="tittle-w3"><span>Special</span> Services</h2>
-			</div>
-			<div class="special-grids">
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 w3ls-special-img">
-						<div class="w3ls-special-text effect-1">
-							<h4>Aliquam</h4>
-						</div>
-					</div>
-					<div class="col-md-6 agileits-special-info">
-						<h4>Aliquam</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 w3ls-special-img wthree-img">
-						<div class="w3ls-special-text effect-1">
-							<h4>Nullam</h4>
-						</div>
-					</div>
-					<div class="col-md-6 agileits-special-info">
-						<h4>Nullam</h4>
-						<p>Maecenas ac purus. Lorem ipsum dolor sit amet</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 w3ls-special-img wthree-img1">
-						<div class="w3ls-special-text effect-1">
-							<h4>Maecenas</h4>
-						</div>
-					</div>
-					<div class="col-md-6 agileits-special-info">
-						<h4>Maecenas</h4>
-						<p>Donec nibh enim, sodales laoreet sit amet, tincidunt</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 agileits-special-info">
-						<h4>Aliquam</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-					</div>
-					<div class="col-md-6 w3ls-special-img wthree-img2">
-						<div class="w3ls-special-text effect-1">
-							<h4>Aliquam</h4>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 agileits-special-info">
-						<h4>Nullam</h4>
-						<p>Maecenas ac purus. Lorem ipsum dolor sit amet</p>
-					</div>
-					<div class="col-md-6 w3ls-special-img wthree-img3">
-						<div class="w3ls-special-text effect-1">
-							<h4>Nullam</h4>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 w3l-special-grid">
-					<div class="col-md-6 agileits-special-info">
-						<h4>Maecenas</h4>
-						<p>Donec nibh enim, sodales laoreet sit amet, tincidunt</p>
-					</div>
-					<div class="col-md-6 w3ls-special-img wthree-img4">
-						<div class="w3ls-special-text effect-1">
-							<h4>Maecenas</h4>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //special -->
-	<div class="about" id="about">
-      <div class="col-md-6 ab-w3-agile-info">
-	   <div class="ab-w3-agile-info-text">
-	     <h3 class="tittle-w3">About<span> Us</span></h3>
-		 <p class="para-w3l">Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.when an unknown printer took a galley of type and scrambled it to make a type specimen book.Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.when an unknown printer took  Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet</p>
-			<div class="about-read">
-				<a href="page_asset/single.html">Learn More</a>
-			</div>
-		  </div>
-		  <div class="ab-w3-agile-inner">
-	       <div class="col-md-6 ab-w3-agile-part">
-				<h4>Handling your needs with care</h4>
-		     <p class="para-w3l">Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum velit. a galley of type and scrambled it to make a type specimen book. Proin ultricies vestibulum velit.</p>
-	       </div>
-			<div class="col-md-6 ab-w3-agile-part two">
-			<h4>Best recipes with best ingredients</h4>
-		     <p class="para-w3l">Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum velit., a galley of type and scrambled it to make a type specimen book. Proin ultricies vestibulum velit.</p>
-	       </div>
-			<div class="clearfix"></div>		   
-	  </div>	
-   </div>	 	  
-	  <div class="col-md-6 ab-w3-agile-img">
-	     
-	  </div>
+		  
+
  
-		<div class="clearfix"></div>
-</div>
-<!--blogs-->
-<div class="agile-blogs" id="blogs">
-	<div class="container">
-	<h3 class="tittle-w3"><span>Popular </span>Recipes</h3>
-		<div class="g1 agile-blog1">
-			<a href="page_asset/#"><img src="page_asset/images/bl1.jpg" alt="blog1"></a>
-				<div class="text-w3">
-					<h3 class="tittle-w3 sub-head"><span>Roasted Heritage Carrot</span></h3>
-					<p class="para-w3l">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.Ut enim ad minim veniam.</p>
-					
-					<a class="read b1" href="page_asset/single.html">Read More</a>
-				</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="g2 agile-blog2">
-			<a href="page_asset/#"><img src="page_asset/images/bl2.jpg" alt="blog1"></a>
-				<div class="text-w3l">
-					<h3 class="tittle-w3 sub-head"><span>Fritto Misto</span></h3>
-					<p class="para-w3l">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.Ut enim ad minim veniam.</p>
-					<a class="read b2" href="page_asset/single.html">Read More</a>
-						
-				</div>
-				<div class="clearfix"></div>
-		</div>
-	</div>
-</div>
-<!--//blogs-->
+
+
 
 	<!--count-->
 			<div class="count-agileits">

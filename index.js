@@ -1,4 +1,5 @@
 var express = require("express");
+var cookieParser = require('cookie-parser')
 var app = express();
 var session = require('express-session');
 var bodyParser = require( 'body-parser' );
@@ -7,7 +8,11 @@ var passport = require('passport');
 var users = require('./app/models/user');
 var flash    = require('connect-flash');
 var isAdminMiddleware = require('./app/middlewares/isAdminMiddleware');
+var csrf = require('csurf')
 require('./config/passport')(passport);
+var csrfProtection = csrf({ cookie: true })
+
+app.use(cookieParser())
 
 app.use(flash());
 app.use(express.static('public'));
@@ -28,9 +33,43 @@ app.use((req, res, next) => {
 	res.locals.session = req.session;
 	next();
 })
-require('./config/routes.js')(app);
+// catch 404 and forward to error handler
+require('./config/routes.js')(app, csrfProtection);
 
-app.listen(3000, () => console.log("ket noi thanh cong toi server su dung port 3000"));
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
+
+
+
+
+app.listen(process.env.PORT || 3000, () => console.log("ket noi thanh cong toi server"));
 
 
 

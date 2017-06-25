@@ -57,7 +57,19 @@ var homeController = {
 
     }),
     getLoginFB : passport.authenticate('facebook',{scope: ['email']}),
-    
+    getFindProducts: (req, res) => {
+      var idLoaiTin = req.query.loaitin;
+      var tintuc = req.query.tintuc;
+      Model.TinTuc.findAll({
+        where: {
+            LoaiTinId: idLoaiTin,
+            name: {
+              $like: "%" + tintuc + "%"
+            }
+        }
+      })
+      .then(arrTinTuc => res.render("user/findResult", {TinTucs: arrTinTuc}))
+    }
 }
 
 module.exports = homeController;
