@@ -8,7 +8,7 @@ Thành viên:
 * [x] 1312064  - Phan Nguyên Mạnh Cường - 1312064  - phancuong12a5@gmail.com - Tỉ lệ đóng góp cho đề tài
 * [ ] **MSSV4** - Tên sinh viên 4 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
 
-URL: **URL hosting của đề tài**
+URL: https://udpt-project-qttd.herokuapp.com/home
 Báo cáo: **URL Github Page của đề tài**
 
 ## Yêu cầu

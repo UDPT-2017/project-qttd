@@ -34,9 +34,9 @@ module.exports = (app, csrfProtection) => {
 	//Tin Tức Controller
 	app.get("/admin/tintuc/danhsach", Controller.TinTuc.getDSTinTuc);
 
-	app.get("/admin/tintuc/them", csrfProtection, Controller.TinTuc.getThemTinTuc);
+	app.get("/admin/tintuc/them", [csrfProtection], Controller.TinTuc.getThemTinTuc);
 
-	app.post("/admin/tintuc/them", csrfProtection, upload.single("image"), Controller.TinTuc.postThemTinTuc);
+	app.post("/admin/tintuc/them", [upload.single("image")], Controller.TinTuc.postThemTinTuc);
 
 	app.get("/admin/tintuc/:id", csrfProtection, Controller.TinTuc.getSuaTinTuc);
 
