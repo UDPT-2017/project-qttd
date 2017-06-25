@@ -29,7 +29,7 @@ Phần mô tả đặt vào đây
 * [x] MVC (1312636)
 * [x] Config (1312636)
 * [ ] REST routing (MSSV1)
-* [ ] Layout & partial (MSSV1)
+* [x] Layout & partial (1312064)
 
 ### Lập trình dữ liệu
 * [x] Thêm (1312636)
@@ -47,7 +47,7 @@ Phần mô tả đặt vào đây
 ### Tương tác API khác
 Liệt kê các API nhóm đã sử dụng được ở đây
 * [x] Facebook API: Đăng nhập (1312636)
-* [ ] Google API: mô tả (MSSV1)
+* [x] Google API:Đăng nhập (1312064)
 * [ ] ...
 
 ## Lập trình client

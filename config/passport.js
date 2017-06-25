@@ -81,39 +81,21 @@ module.exports = (passport) => {
         profileFields :['email','displayName']
 
     },
-    function(token, refreshToken, profile, done) {
-
-        // make the code asynchronous
-        // User.findOne won't fire until we have all our data back from Google
-        process.nextTick(function() {
-
-            // try to find the user based on their google id
-            Model.User.facebook.findOne({ 'google.id' : profile.id }, function(err, user) {
-                if (err)
-                    return done(err);
-
-                if (user) {
-
-                    // if a user is found, log them in
-                    return done(null, user);
-                } else {
-                    // if the user isnt in our database, create a new user
-                    let newUser          = new User();
-
-                    // set all of the relevant information
-                    idGG   = profile.id +"";
-                    nameGG  = profile.displayName + "";
-                    emailGG = profile.emails[0].value; // pull the first email
-
-                    // save the user
-                    newUser.save(function(err) {
-                        if (err)
-                            throw err;
-                        return done(null, newUser);
-                    });
-                }
-            });
-        });
-
+    (accessToken, refreshToken, profile, done) => {
+        Model.User.facebook.findOne({
+            where: {
+                idFB == profile.id
+            }
+        })
+        .then( user => {
+            if (user) return done(null, user);
+            let newUser = {
+                    idFB : profile.id,
+                    name : profile.displayName,
+                    email : profile.emails[0].value,
+            };
+            Model.User.facebook.create(newUser)
+            .then( us => done(null, us))
+        })
     }));
 }
