@@ -66,13 +66,13 @@ Liệt kê các API nhóm đã sử dụng được ở đây
 * [x] Thêm và kiểm tra CSRF Token khi submit form sử dụng method post(1312636)
 
 ## Chức năng đã thực hiện
-###Khởi tạo
+### Khởi tạo
 * [x] Khởi tạo project và phân chia các module theo mô hình MVC (1312636)
 * [x] Thiết kế và khởi tạo database (1312636)
 * [x] Tìm kiếm và chỉnh sửa template html từ thư viện w3layouts (1312636)
 * [x] Config chứa các thiết lập về database, folder upload hình ảnh, routes, và thiết lập xác thực người dùng (1312636)
 
-###Lập trình dữ liệu
+### Lập trình dữ liệu
 * [x] Thêm, xóa, sửa loại sản phẩm + sản phẩm trong phầnq quản lý admin (1312636)
 * [x] Tìm kiếm sản phẩm theo danh mục hoặc tất cả sản phẩm trong trang chủ /home (1312636)
 
@@ -82,11 +82,11 @@ Liệt kê các API nhóm đã sử dụng được ở đây
   * [x] 403 khi thiếu csrf token khi submit form method post (1312636)
   * [x] 500 lỗi server (1312636)
 
-###Tương tác API
+### Tương tác API
 * [x] Facebook API: đăng nhập (1312636)
 * [x] Google API: đăng nhập (1312064)
 
-###Lập trình client
+### Lập trình client
 * [x] Kiểm tra dữ liệu nhập vào khi đăng ký tài khoản (1312064)
 * [x] Thao tác DOM
   * [x] DOM lấy ra dữ liệu nhập vào form đăng ký để kiểm tra (1312064)
@@ -94,7 +94,7 @@ Liệt kê các API nhóm đã sử dụng được ở đây
 * [x] AJAX
   * [x] AJAX gởi request lên server khi người dùng thêm sản phẩm vào giỏ hàng
   * [x] AJAX gởi request lên server khi người dùng thêm, giảm, bỏ sản phẩm ra khỏi giỏ hàng
-###Bảo Mật
+### Bảo Mật
 * [x] Xác thực người dùng, cho phép đăng nhập và đăng ký người dùng (1312636)
 * [x] Phân Quyền người dùng
   * [x] Người dùng chưa đăng nhập khi vào trang home sẽ tự động redirect về lại trang login (1312636)
