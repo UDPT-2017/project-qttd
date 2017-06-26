@@ -13,22 +13,6 @@ module.exports = (app, csrfProtection) => {
 	app.get("/login/facebook", Controller.Home.getLoginFB);
 
 	app.get("/login/facebook/cb", Controller.Home.callbackLoginFB);
-	
-	app.get("/login/google", Controller.Home.getLoginGG);
-
-	app.get("/login/google/cb", Controller.Home.callbackLoginGG);
-
-
-	// Xử lý của user 
-	//Thêm tin tức
-	app.get("/user", Controller.User.getThemTinTuc);
-
-	app.post("/user", Controller.User.postThemTinTuc);
-	//Sửa tin tức
-	app.get("/user/:id", Controller.User.getSuaTinTuc);
-
-	app.post("/user/:id", Controller.User.postSuaTinTuc);
-
 
 	app.get("/findproducts", Controller.Home.getFindProducts);
 

@@ -1,7 +1,6 @@
 var LocalStrategy = require('passport-local').Strategy;
 var FBStrategy = require('passport-facebook').Strategy;
 var Model = require('./../app/models/model');
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 module.exports = (passport) => {
     passport.serializeUser(function(user, done) {
@@ -68,31 +67,6 @@ module.exports = (passport) => {
                 idFB: profile._json.id + "",
                 name: profile._json.name + "",
                 email: profile._json.email + "",
-            };
-            Model.User.facebook.create(newUser)
-            .then( us => done(null, us))
-        })
-    }));
-    passport.use(new GoogleStrategy({
-
-        clientID        : "686494571732-2lmg9ajnv2eetfp1eaomqlq1ba1828r5.apps.googleusercontent.com",
-        clientSecret    : "SP0e5lHnxFoJcIJVfYIJZ_Hi",
-        callbackURL     : "http://localhost:3000/login/google/cb",
-        profileFields :['email','displayName']
-
-    },
-    (accessToken, refreshToken, profile, done) => {
-        Model.User.facebook.findOne({
-            where: {
-                idFB == profile.id
-            }
-        })
-        .then( user => {
-            if (user) return done(null, user);
-            let newUser = {
-                    idFB : profile.id,
-                    name : profile.displayName,
-                    email : profile.emails[0].value,
             };
             Model.User.facebook.create(newUser)
             .then( us => done(null, us))

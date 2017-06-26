@@ -1,18 +1,5 @@
 const Sequelize = require('sequelize');
 
-<<<<<<< HEAD
-const db = new Sequelize({
-  database : 'nodejs',
-  username : 'postgres',
-  password : '12345',
-  host     : 'localhost',
-  port     : 5432,
-  dialect  : 'postgres',
-  define   : {
-    freezeTableName : true
-  }
-})
-=======
 
 
 if (process.env.DATABASE_URL) {
@@ -31,14 +18,6 @@ else{
 	  }
 	})
 }
->>>>>>> 1312636_quoctrung
 
-db
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+
 module.exports = db;

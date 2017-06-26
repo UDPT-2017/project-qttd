@@ -2,6 +2,7 @@ var Model = require('./../models/model');
 var passport = require('passport');
 require('./../../config/passport')(passport);
 
+
 var homeController = {
     getLogin: (req, res) => {
       let err = req.flash("error");
@@ -17,7 +18,7 @@ var homeController = {
         })
         .then(arrTinTuc => {
           Model.LoaiTin.findAll()
-          .then(arrLoaiTin => res.render("user/index",{TinTucs: arrTinTuc, LoaiTins: arrLoaiTin,}))
+          .then(arrLoaiTin => res.render("user/index",{TinTucs: arrTinTuc, LoaiTins: arrLoaiTin}))
         })      
     },
     postLogin: passport.authenticate('local', { successRedirect: '/home',
@@ -56,13 +57,6 @@ var homeController = {
 
     }),
     getLoginFB : passport.authenticate('facebook',{scope: ['email']}),
-<<<<<<< HEAD
-    getLoginGG : passport.authenticate('google',{scope:['email']}),
-    callbackLoginGG: passport.authenticate('google', { successRedirect: '/home',
-                                             failureRedirect: '/login' 
-
-    }),
-=======
     getFindProducts: (req, res) => {
       var idLoaiTin = req.query.loaitin;
       var tintuc = req.query.tintuc;
@@ -88,7 +82,6 @@ var homeController = {
       }
 
     }
->>>>>>> 1312636_quoctrung
 }
 
 module.exports = homeController;

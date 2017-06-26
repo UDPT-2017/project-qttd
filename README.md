@@ -5,11 +5,7 @@
 Thành viên:
 * [x] 1312636 - Nguyễn Hoàng Quốc Trung - nhqtrung95 - 75%
 * [x] 1312088 - Trần Đình Duy - tranduy95 - duytrandinh95@gmail.com - Tỉ lệ đóng góp cho đề tài
-<<<<<<< HEAD
-* [x ] **1312064** - Phan Nguyên Mạnh Cường - 1312064 - phancuong12a5@gmail.com - Tỉ lệ đóng góp cho đề tài
-=======
 * [x] 1312064  - Phan Nguyên Mạnh Cường - 1312064  - phancuong12a5@gmail.com - Tỉ lệ đóng góp cho đề tài
->>>>>>> 1312636_quoctrung
 * [ ] **MSSV4** - Tên sinh viên 4 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
 
 URL: https://udpt-project-qttd.herokuapp.com/home
@@ -33,7 +29,7 @@ Phần mô tả đặt vào đây
 * [x] MVC (1312636)
 * [x] Config (1312636)
 * [ ] REST routing (MSSV1)
-* [x] Layout & partial (1312064)
+* [ ] Layout & partial (MSSV1)
 
 ### Lập trình dữ liệu
 * [x] Thêm (1312636)
@@ -52,11 +48,11 @@ Phần mô tả đặt vào đây
 ### Tương tác API khác
 Liệt kê các API nhóm đã sử dụng được ở đây
 * [x] Facebook API: Đăng nhập (1312636)
-* [x] Google API:Đăng nhập (1312064)
+* [ ] Google API: mô tả (MSSV1)
 * [ ] ...
 
 ## Lập trình client
-* [x] Kiểm tra dữ liệu (kiểm tra dữ liệu đăng kí tài khoản   ) (1312064)
+* [ ] Kiểm tra dữ liệu (MSSV1)
 * [ ] Animation (MSSV1)
 * [x] Thao tác DOM (1312636)
 * [x] AJAX (1312636)
