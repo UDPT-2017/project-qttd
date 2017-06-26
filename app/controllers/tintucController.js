@@ -15,10 +15,10 @@ var TinTucController = {
 		let err = req.flash("err");
 		let success = req.flash("success");
 		Model.LoaiTin.findAll()
-		.then(arrLoaiTin => res.render("admin/tintuc/them",{err: err, success: success, LoaiTins: arrLoaiTin}))
+		.then(arrLoaiTin => res.render("admin/tintuc/them",{err: err, success: success, LoaiTins: arrLoaiTin, csrfToken: req.csrfToken()}))
 	},
 	postThemTinTuc: (req, res) => {
-		console.log(req.file);
+		console.log(req.body._csrf);
 		let name = req.body.name;
 		let summmary = req.body.summmary;
 		let substance = req.body.substance;
@@ -55,7 +55,7 @@ var TinTucController = {
 		})
 		.then(TinTuc => {
 			Model.LoaiTin.findAll()
-			.then(LoaiTins => res.render("admin/tintuc/sua",{err: err , success: success, TinTuc: TinTuc, LoaiTins: LoaiTins}))
+			.then(LoaiTins => res.render("admin/tintuc/sua",{err: err , success: success, TinTuc: TinTuc, LoaiTins: LoaiTins, csrfToken: req.csrfToken()}))
 		})
 	},
 	postSuaTinTuc: (req, res) => {

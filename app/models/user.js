@@ -3,11 +3,17 @@ var db = require('./../../config/db');
 
 const User = {
 	local: db.define('user', {
-		username : {
+		username: {
 			type: Sequelize.STRING,
 			unique: true
 		},
-		password : Sequelize.STRING
+		password: {
+			type: Sequelize.STRING
+		},
+		isAdmin: {
+			type: Sequelize.INTEGER,
+			defaultValue: 0,
+		}
 	}),
 	facebook: db.define('userFB', {
 		name : Sequelize.STRING,
@@ -21,16 +27,6 @@ const User = {
 
 
 
-// User.facebook.sync();
-// User.local.sync();
-// // User.create({
-// // 	username: 'nhqtrung',
-// // 	password: 'tyevtcbye'
-// // });
-// 	findUser: (id, classUser, callback) => {
-// 		classUser.findById(id)
-// 		.then( user => callback(undefined, user))
-// 		.catch( err => callback(err))
-// 	}
+
 
 module.exports = User;

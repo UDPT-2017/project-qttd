@@ -1,8 +1,9 @@
 
 var isAdminMiddleware = (req, res, next) => {
 	let role = req.user
-	if (!req.isAuthenticated()) return res.redirect("/login");
-	return next();
+	console.log(req.user.isAdmin);
+	if (!req.isAuthenticated() || req.user.isAdmin == 0) return res.redirect("/login");
+	next();
 }
 
 module.exports = isAdminMiddleware;

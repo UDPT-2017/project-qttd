@@ -3,12 +3,16 @@
 **Name of your app** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
 
 Thành viên:
-* [x] 1312636 - Nguyễn Hoàng Quốc Trung - nhqtrung95 - Tỉ lệ đóng góp cho đề tài
+* [x] 1312636 - Nguyễn Hoàng Quốc Trung - nhqtrung95 - 75%
 * [x] 1312088 - Trần Đình Duy - tranduy95 - duytrandinh95@gmail.com - Tỉ lệ đóng góp cho đề tài
+<<<<<<< HEAD
 * [x ] **1312064** - Phan Nguyên Mạnh Cường - 1312064 - phancuong12a5@gmail.com - Tỉ lệ đóng góp cho đề tài
+=======
+* [x] 1312064  - Phan Nguyên Mạnh Cường - 1312064  - phancuong12a5@gmail.com - Tỉ lệ đóng góp cho đề tài
+>>>>>>> 1312636_quoctrung
 * [ ] **MSSV4** - Tên sinh viên 4 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
 
-URL: **URL hosting của đề tài**
+URL: https://udpt-project-qttd.herokuapp.com/home
 Báo cáo: **URL Github Page của đề tài**
 
 ## Yêu cầu
@@ -39,10 +43,11 @@ Phần mô tả đặt vào đây
 
 ### Xử lý lỗi
 * [ ] Xử lý lỗi trong cùng trang web (MSSV1)
-* [ ] Xử lý lỗi dùng trang web riêng (MSSV1)
+* [x] Xử lý lỗi dùng trang web riêng (1312636)
    * [ ] 401 (MSSV1)
-   * [ ] 404 (MSSV1)
-   * [ ] 500 (MSSV1)
+   * [x] 403 (1312636)
+   * [x] 404 (1312636)
+   * [x] 500 (1312636)
 
 ### Tương tác API khác
 Liệt kê các API nhóm đã sử dụng được ở đây
@@ -53,18 +58,18 @@ Liệt kê các API nhóm đã sử dụng được ở đây
 ## Lập trình client
 * [x] Kiểm tra dữ liệu (kiểm tra dữ liệu đăng kí tài khoản   ) (1312064)
 * [ ] Animation (MSSV1)
-* [ ] Thao tác DOM (MSSV1)
-* [ ] AJAX (MSSV1)
+* [x] Thao tác DOM (1312636)
+* [x] AJAX (1312636)
 
 ## Bảo mật
 * [x] Chứng thực (1312636)
-* [ ] Phân quyền sử dụng một số trang web với nhiều vai trò khác nhau (MSSV1)
-   * [ ] Không cho phép thao tác vào trang web khi không có quyền (MSSV1)
+* [x] Phân quyền sử dụng một số trang web với nhiều vai trò khác nhau (MSSV1)
+   * [x] Không cho phép thao tác vào trang web khi không có quyền (MSSV1)
    * [ ] Thể hiện các chức năng khác nhau trên cùng giao diện khi người dùng có quyền khác nhau (MSSV1)
    * [ ] Thể hiện lỗi khi không truy xuất được trang khi không có quyền (MSSV1)
 
 ## Nâng cao
-* [ ] ...
+* [x] CSRF Token (1312636)
 
 ## Chức năng đã thực hiện
 Các **yêu cầu chức năng** (check và ghi MSSV vào các phần chức năng đã thực hiện)

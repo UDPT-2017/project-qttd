@@ -56,11 +56,39 @@ var homeController = {
 
     }),
     getLoginFB : passport.authenticate('facebook',{scope: ['email']}),
+<<<<<<< HEAD
     getLoginGG : passport.authenticate('google',{scope:['email']}),
     callbackLoginGG: passport.authenticate('google', { successRedirect: '/home',
                                              failureRedirect: '/login' 
 
     }),
+=======
+    getFindProducts: (req, res) => {
+      var idLoaiTin = req.query.loaitin;
+      var tintuc = req.query.tintuc;
+      if (idLoaiTin == 0) {
+        Model.TinTuc.findAll({
+          where: {
+              name: {
+                $like: "%" + tintuc + "%"
+              }
+          }
+        })
+        .then(arrTinTuc => res.render("user/findResult", {TinTucs: arrTinTuc}))    
+      } else {
+        Model.TinTuc.findAll({
+          where: {
+              LoaiTinId: idLoaiTin,
+              name: {
+                $like: "%" + tintuc + "%"
+              }
+          }
+        })
+        .then(arrTinTuc => res.render("user/findResult", {TinTucs: arrTinTuc}))       
+      }
+
+    }
+>>>>>>> 1312636_quoctrung
 }
 
 module.exports = homeController;

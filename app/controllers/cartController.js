@@ -39,6 +39,49 @@ var cartController = {
 		    totalPrice: cart.totalPrice
 		});
 	},
+	getDatHang: (req,res) => {
+		var cart = new Model.Cart(req.session.cart);
+		var user = req.user;
+		console.log(user);
+		res.render('user/thanhtoan',{
+			user: user,
+			TinTucs: cart.generateArray(),
+			totalPrice: cart.totalPrice,
+		});
+	},
+	postDatHang: (req, res) => {
+		let DiaChiGiaoHang = req.body.address;
+		let GiaTriHoaDon = req.body.totalPrice;
+		let UserId = req.body.userid;
+		let TinhTrangDonHang = 0;
+		Model.HoaDon.build({
+			DiaChiGiaohang: DiaChiGiaoHang,
+			GiaTriHD: GiaTriHoaDon,
+			UserId: UserId,
+			TinhTrangDonHang: TinhTrangDonHang,
+		})
+		.save()
+		.then((hoadon) => {
+			var cart = new Model.Cart(req.session.cart);
+			cart = cart.generateArray();
+			cart.forEach(item => {
+				let SoLuong = item.qty;
+				let DonGia = item.price;
+				let HoaDonId = hoadon.id;
+				let TinTucId = item.item.id;
+				Model.ChiTietDatHang.build({
+					SoLuong: SoLuong,
+					DonGia: DonGia,
+					HoaDonId: HoaDonId,
+					TinTucId: TinTucId
+				})	
+				.save()
+				.then(() => console.log("saved"))
+			})
+			req.session.cart = {};
+			res.redirect("/home");
+		})
+	}
  }
 
 module.exports = cartController;

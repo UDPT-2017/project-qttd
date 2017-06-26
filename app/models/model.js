@@ -34,10 +34,20 @@ db.HoaDon.hasMany(db.ChiTietDatHang,{as: 'ChiTietDatHang'});
 db.TinTuc.hasMany(db.ChiTietDatHang,{as: 'ChiTietDatHang'});
 
 
+db.User.local.sync()
+.then(() => db.LoaiTin.sync())
+.then(() => db.TinTuc.sync())
+.then(() => db.HoaDon.sync())
+.then(() => db.ChiTietDatHang.sync())
+.then(() => {
+	db.User.local.create({
+		username: "nhqtrung95@gmail.com",
+		password: "tyevtcbye",
+		isAdmin: 1
+	})
+})
 
 
 
-
-// db.TheLoai.sync();
 
 module.exports = db;
