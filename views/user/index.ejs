@@ -45,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li>
 						<div class="search">
 							<input class="search_box" type="checkbox" id="search_box">
-							<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span id="totalQty" style="color:white">
+							<a href="./cart"><i class="fa fa-shopping-cart"></i></a><span id="totalQty" style="color:white">
 							<% if (session.cart) {%>
 							<%= session.cart.totalQty %>
 							<% } %></span></label>
@@ -113,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 form-left-agileits-w3layouts ">
 							<label><i class="fa fa-users" aria-hidden="true"></i> Loại Sản Phẩm :</label>
 							<select class="form-control" name="loaitin">
-								<option value="0"></option>
+								<option value="0">Tất Cả</option>
 								<% LoaiTins.forEach(loaitin => { %>
 										<option value="<%= loaitin.id %>"><%= loaitin.name %></option>
 								<% }) %>
@@ -187,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-10">
                 <div class="panel panel-default">            
                     <div class="panel-heading" style="background-color:#337AB7; color:white;" >
-                        <h2 style="margin-top:0px; margin-bottom:0px;">Thức Ăn Nhanh</h2>
+                        <h2 style="margin-top:0px; margin-bottom:0px;">Món Mới</h2>
                     </div>
                     <div class="panel-body">
                         <!-- item -->

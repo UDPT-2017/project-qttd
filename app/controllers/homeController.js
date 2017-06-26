@@ -60,15 +60,27 @@ var homeController = {
     getFindProducts: (req, res) => {
       var idLoaiTin = req.query.loaitin;
       var tintuc = req.query.tintuc;
-      Model.TinTuc.findAll({
-        where: {
-            LoaiTinId: idLoaiTin,
-            name: {
-              $like: "%" + tintuc + "%"
-            }
-        }
-      })
-      .then(arrTinTuc => res.render("user/findResult", {TinTucs: arrTinTuc}))
+      if (idLoaiTin == 0) {
+        Model.TinTuc.findAll({
+          where: {
+              name: {
+                $like: "%" + tintuc + "%"
+              }
+          }
+        })
+        .then(arrTinTuc => res.render("user/findResult", {TinTucs: arrTinTuc}))    
+      } else {
+        Model.TinTuc.findAll({
+          where: {
+              LoaiTinId: idLoaiTin,
+              name: {
+                $like: "%" + tintuc + "%"
+              }
+          }
+        })
+        .then(arrTinTuc => res.render("user/findResult", {TinTucs: arrTinTuc}))       
+      }
+
     }
 }
 
