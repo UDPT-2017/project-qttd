@@ -75,8 +75,9 @@ Liệt kê các API nhóm đã sử dụng được ở đây
 ### Lập trình dữ liệu
 * [x] Thêm, xóa, sửa loại sản phẩm + sản phẩm trong phầnq quản lý admin (1312636)
 * [x] Tìm kiếm sản phẩm theo danh mục hoặc tất cả sản phẩm trong trang chủ /home (1312636)
+* [x] Lưu thông tin đơn hàng sau khi người dùng đặt hàng
 
-###Xử lý lỗi
+### Xử lý lỗi
 * [x] Xử lý lỗi 
   * [x] 404 khi trang không được tìm thấy (1312636)
   * [x] 403 khi thiếu csrf token khi submit form method post (1312636)
