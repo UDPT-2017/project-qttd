@@ -66,6 +66,7 @@ Liệt kê các API nhóm đã sử dụng được ở đây
 * [x] Thêm và kiểm tra CSRF Token khi submit form sử dụng method post(1312636)
 
 ## Chức năng đã thực hiện
+###Khởi tạo
 * [x] Khởi tạo project và phân chia các module theo mô hình MVC (1312636)
 * [x] Thiết kế và khởi tạo database (1312636)
 * [x] Tìm kiếm và chỉnh sửa template html từ thư viện w3layouts (1312636)
