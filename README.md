@@ -32,10 +32,10 @@ Phần mô tả đặt vào đây
 * [ ] Layout & partial (MSSV1)
 
 ### Lập trình dữ liệu
-* [x] Thêm (1312636)
-* [x] Xóa (1312636)
-* [x] Sửa (1312636)
-* [x] Tìm kiếm (1312636)
+* [x] Thêm (1312636-131288)
+* [x] Xóa (1312636-1312088)
+* [x] Sửa (1312636-1312088)
+* [x] Tìm kiếm (1312636-1312088)
 
 ### Xử lý lỗi
 * [ ] Xử lý lỗi trong cùng trang web (MSSV1)
