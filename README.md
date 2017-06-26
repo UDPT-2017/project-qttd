@@ -101,8 +101,10 @@ Liệt kê các API nhóm đã sử dụng được ở đây
   * [x] Người dùng chưa đăng nhập khi vào trang home sẽ tự động redirect về lại trang login (1312636)
   * [x] Người dùng không có quyền admin khi truy cập vào những routes quản lý của admin sẽ được chuyền về trang home (132636)
 
-
-
+## Tài khoản sử dụng với quyền admin
+  Username: nhqtrung95@gmail.com
+  Password: tyevtcbye
+  URL admin: https://udpt-project-qttd.herokuapp.com/admin/tintuc/danhsach
 ## Demo
 
 Link ảnh GIF demo ứng dụng:

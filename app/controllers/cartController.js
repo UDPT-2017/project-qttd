@@ -79,7 +79,7 @@ var cartController = {
 				.then(() => console.log("saved"))
 			})
 			req.session.cart = {};
-			res.redirect("/home");
+			res.render("succes");
 		})
 	}
  }
