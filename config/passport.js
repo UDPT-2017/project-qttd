@@ -21,7 +21,6 @@ module.exports = (passport) => {
             return done(null, data)
         }
     });
-
     passport.deserializeUser(function(data, done) {
         data = JSON.parse(data)
         if (data.class == "facebook") {

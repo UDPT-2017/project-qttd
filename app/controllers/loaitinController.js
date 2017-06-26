@@ -8,7 +8,11 @@ var LoaiTinController = {
 	getThemLoaiTin: (req, res) => {
 		let err = req.flash("err");
 		let success = req.flash("success");
+<<<<<<< HEAD
 		res.render("admin/loaitin/them",{err: err, success: success})
+=======
+		res.render("admin/loaitin/them",{err: err, success: success, csrfToken: req.csrfToken()})
+>>>>>>> 6f2d71a14efd47f7aae36be3f1a80b46117b30c7
 	},
 	postThemLoaiTin: (req, res) => {
 		let name = req.body.name;
@@ -32,7 +36,11 @@ var LoaiTinController = {
 		let err = req.flash("err");
 		let success = req.flash("success");
 		Model.LoaiTin.findById(id)
+<<<<<<< HEAD
 		.then(LoaiTin => res.render("admin/loaitin/sua",{err: err , success: success, LoaiTin: LoaiTin}))
+=======
+		.then(LoaiTin => res.render("admin/loaitin/sua",{err: err , success: success, LoaiTin: LoaiTin, csrfToken: req.csrfToken()}))
+>>>>>>> 6f2d71a14efd47f7aae36be3f1a80b46117b30c7
 	},
 	postSuaLoaiTin: (req, res) => {
 		let id = req.params.id;

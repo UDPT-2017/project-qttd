@@ -4,14 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "cookieparser": "^0.1.0",
+    "csurf": "^1.9.0",
+    "ejs": "^2.5.6",
     "express": "^4.15.3",
+<<<<<<< HEAD
     "multer": "^1.3.0",
+=======
+    "express-session": "^1.15.3",
+    "multer": "^1.3.0",
+    "passport": "^0.3.2",
+>>>>>>> 6f2d71a14efd47f7aae36be3f1a80b46117b30c7
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
     "pg": "^6.2.3",
